@@ -1,0 +1,25 @@
+{
+	"name": "gps_rys8833",
+	"version": "1.0.0",
+	"description": "Lib to module rys8833 and rp2040",
+	"keywords": "RYS8833, gps, time",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"authors": [
+		{
+			"name": "axender20",
+			"email": "alexander00vasquez@gmail.com",
+			"maintainer": true
+		}
+	],
+	"license": "MIT",
+	"dependencies": {
+		"uart_pio_debug": "https://github.com/axender20/uart_pio_debug.git",
+		"freertos_defintions": "https://github.com/axender20/freertos_defintions.git",
+		"date_time": "https://github.com/axender20/date_time.git"
+	},
+	"frameworks": "arduino",
+	"platforms": "https://github.com/maxgerhardt/platform-raspberrypi.git"
+}
