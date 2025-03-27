@@ -5,7 +5,7 @@
 	"keywords": "RYS8833, gps, time",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/axender20/gps_rys8833.git"
 	},
 	"authors": [
 		{
