@@ -10,12 +10,14 @@
 // #define _GPS_DEBUG_ENABLE_
 #ifdef _GPS_DEBUG_ENABLE_ 
 #include "uart_pio_debug.h"
+#define GPS_DEBUG_INIT() DEBUG_INIT()
+#define GPS_DEBUG_PRINT(_x) DEBUG_PRINT(_x)
+#define GPS_DEBUG_PRINTLN(_x) DEBUG_PRINTLN(_x)
 #else
-#define DEBUG_INIT()
-#define DEBUG_PRINTLN(_info)
-#define DEBUG_PRINT(_info)
+#define GPS_DEBUG_INIT()
+#define GPS_DEBUG_PRINT(_x)
+#define GPS_DEBUG_PRINTLN(_x)
 #endif
-
 
 class RYS8833 {
 private:

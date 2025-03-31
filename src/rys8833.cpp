@@ -50,7 +50,7 @@ String RYS8833::read_response() {
       break;
     }
   }
-  if (rsp != "") DEBUG_PRINTLN(rsp);
+  if (rsp != "") GPS_DEBUG_PRINTLN(rsp);
   return rsp;
 }
 
@@ -180,7 +180,7 @@ bool RYS8833::begin() {
   gps_port->setTimeout(100);
   gps_port->begin(gps_port_baudrate);
 
-  DEBUG_PRINTLN("GPS Initializate");
+  GPS_DEBUG_PRINTLN("GPS Initializate");
 
   is_begun = test();
 
