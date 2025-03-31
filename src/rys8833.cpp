@@ -27,7 +27,7 @@ enum e_GPS_CMDs : uint8_t {
 };
 
 void RYS8833::_delay_gps(uint32_t _time) {
-  delay(_time);
+  delay_frms(_time);
 }
 
 void RYS8833::hardware_reset() {
@@ -36,9 +36,9 @@ void RYS8833::hardware_reset() {
   const uint32_t time_nack = 1000u;
   pinMode(pin_rs, OUTPUT);
   digitalWrite(pin_rs, LOW);
-  delay(time_nack);
+  _delay_gps(time_nack);
   digitalWrite(pin_rs, HIGH);
-  delay(time_nack);
+  _delay_gps(time_nack);
 }
 
 String RYS8833::read_response() {
@@ -49,6 +49,7 @@ String RYS8833::read_response() {
       rsp = gps_port->readString();
       break;
     }
+    _delay_gps(1);
   }
   if (rsp != "") GPS_DEBUG_PRINTLN(rsp);
   return rsp;
@@ -192,7 +193,7 @@ void RYS8833::configure() {
   for (uint8_t i = 0; i < LGTH_CMDs - 1; i++) {
     send_command(GPS_CMDs[i]);
     read_response();
-    delay(200);
+    _delay_gps(200);
   }
 }
 
